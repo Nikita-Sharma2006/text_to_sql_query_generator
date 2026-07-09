@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #B8FF4F;
+  --color-accent-hover: #A5EB3B;
+  --color-surface: #FFFFFF;
+  --color-bg-default: #FAFAFA;
+  --color-primary: #111111;
+  --color-secondary: #6B7280;
+  --color-border-light: #E5E7EB;
+  
+  --font-sans: "Inter", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-default text-primary font-sans antialiased min-h-screen selection:bg-accent selection:text-primary;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight text-primary;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAFAFA;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D1D5DB;
+}
+
+/* Premium micro-animations & utilities */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.glow-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 20px rgba(184, 255, 79, 0.25);
+  border-color: #B8FF4F;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.04), 0 4px 12px -5px rgba(0, 0, 0, 0.02);
+  border-color: #111111;
+}
+
+/* Modern Grid Background */
+.grid-bg {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(229, 231, 235, 0.3) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(229, 231, 235, 0.3) 1px, transparent 1px);
+}
+
+/* Abstract UI compiler code line decoration */
+.abstract-line {
+  position: relative;
+  overflow: hidden;
+}
+.abstract-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #B8FF4F, transparent);
+}
